@@ -2,8 +2,7 @@ import React from "react";
 import logoImg from '../../assets/img/logo.png'
 import './styles.css';
 
-export class Navbar extends React.Component {
-    render() {
+export function Navbar() {
         return(
             <header>
             <nav id="navbar">
@@ -13,14 +12,13 @@ export class Navbar extends React.Component {
                </div>
 
               <ul className="nav-list">
-                <li><a href="/">Drivers</a></li>
-                <li><a href="/">Passengers</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Trending</a></li>
+                <li><a href="/">Categories</a></li>
                 <li><a href="/">About Us</a></li>
-                <li><a href="/">Contact</a></li>
               </ul>
             </nav>
           </header>
         );
     }
-}
 

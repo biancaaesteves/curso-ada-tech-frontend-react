@@ -1,0 +1,20 @@
+.stats_card {
+  background-color:  #C0C0C0;
+  color: #000000 ;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 3 ;
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1;  // só o tamanho da foto vai ser a altura da linha
+
+  }
+
+  span {
+    font-size: 4rem;
+    line-height: 1; // só o tamanho da foto vai ser a altura da linha
+  }
+}

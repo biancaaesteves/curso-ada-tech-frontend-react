@@ -18,24 +18,17 @@ Projeto para consolidar todo o conteúdo da primeira parte da formação, onde e
 - Exercício
 
 ### Módulo React II: Componentes Funcionais e Hooks
-- Sistema de Tipos e Estados
-- Constantes, Variáveis e Funções
-- Coerções e Operadores Aritméticos
-- Vetores, Matrizes e Objetos
-- Controle de Fluxo e Tomada de Decisão (IF, ELSE, SWITCH)
-- Operador Ternário e Operadores de Coalescência
-- Laços de Repetição (WHILE, DO-WHILE, FOR, FOR-IN, FOR-OF)
-- Busca em Vetores e Matrizes
-- Funções, Parametrização e Composição
-- Funções de Alta Ordem e Tratamento de Erros
+- React Funcional I - Componentes Funcionais e Estilização
+- Exercícios
+- React Funcional II - Hook de Estado
 
-### Styled Components
+### Módulo Styled Components
 - 
 
-### Redux
+### Módulo Redux
 - 
 
-### Testes e Deployment
+### Módulo Testes e Deployment
 -
 
 

@@ -8,20 +8,17 @@ this.props = {
 
 
 */
-
-export class Article extends React.Component {
-    render() {
+export function Article ({ title, provider, description, thumbnail }) {
         return (
             <article id="article">
-                <img src={this.props.thumbnail} alt={this.props.title} />
+                <img src={thumbnail} alt={title} />
             
                 <div className="article-infos">
-                    <h2>{this.props.title}</h2>
-                    <h3>{this.props.provider}</h3>
-                    <p>{this.props.description}</p>
+                    <h2>{title}</h2>
+                    <h3>{provider}</h3>
+                    <p>{description}</p>
                 </div>
             </article>
         )
     }
-}
 

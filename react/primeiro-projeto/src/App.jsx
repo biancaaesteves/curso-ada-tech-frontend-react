@@ -11,6 +11,8 @@ import { Counter } from "./components/Counter/Counter";
 // Um componente em classe é uma classe que herda a classe Component do React
 //  e retorna HTML dentro do método render. 
 
+// Componente funcional é uma função que retorna HTML. 
+
 class App extends React.Component {  // função que retorna html. Tudo que está aqui, aparece no navegador. 
 
  render() {  
@@ -22,9 +24,7 @@ class App extends React.Component {  // função que retorna html. Tudo que est�
        <> 
     <Navbar />
 
-    <Counter />
-
-    {/* <section id="articles">
+    <section id="articles">
       <Article
       title="Designing Dashboards"
       provider="NASA"
@@ -48,8 +48,7 @@ class App extends React.Component {  // função que retorna html. Tudo que est�
       description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       thumbnail={article1Img}/> 
 
-      <Article title="Exemplo4" />
-    </section> */}
+    </section> 
      
      </>
      // Como não pode criar mais de 1 tag no render, o react criou essa tag vazia (fragment) para solucionar esse problema. 
