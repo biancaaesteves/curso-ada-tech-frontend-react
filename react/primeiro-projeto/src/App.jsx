@@ -22,7 +22,9 @@ class App extends React.Component {  // função que retorna html. Tudo que est�
 
     return ( // e é dentro desse método que retornamos o html que será renderizado. 
        <> 
-    <Navbar />
+        <Counter />
+
+    {/* <Navbar />
 
     <section id="articles">
       <Article
@@ -48,7 +50,7 @@ class App extends React.Component {  // função que retorna html. Tudo que est�
       description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
       thumbnail={article1Img}/> 
 
-    </section> 
+    </section>  */}
      
      </>
      // Como não pode criar mais de 1 tag no render, o react criou essa tag vazia (fragment) para solucionar esse problema. 

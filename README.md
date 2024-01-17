@@ -3,6 +3,8 @@ Este repositório é dedicado à segunda parte do curso de formação em Fronten
 
 ## Grade do Curso 
 Projeto para consolidar todo o conteúdo da primeira parte da formação, onde estudamos JavaScript (com HTML e CSS) e APIs, e criamos uma página de previsão do tempo utilizando a API Open Weather. 
+Após o projeto de Previsão do Tempo, inicia-se o cronograma dos estudos em React. 
+Observação: como esse é um código de estudos, pode ser que tenha muitos comentários, pois eu, particularmente, gosto de fazer anotações para revisar o código e fixar o conteúdo estudado. 
 
 ### Projeto Previsão do Tempo
 

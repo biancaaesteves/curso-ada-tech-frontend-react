@@ -1,0 +1,56 @@
+.container {
+  max-width: 1240; // largura máxima
+  padding: 0 2rem;
+  margin: 7rem auto 0;
+
+  form {
+    display: flex;
+    align-items: flex-end;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      label {
+        font-size: 0.85rem;
+      }
+
+      input {
+        height: 44px;
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      width: 150px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+      background-color: #314da6;
+      color: #fff;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin-top: 1rem;
+    padding: 0 0.25;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5;
+
+      input {
+        height: 1rem;
+        width: 1rem;
+      }
+
+      label {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
