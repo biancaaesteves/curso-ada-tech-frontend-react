@@ -8,7 +8,7 @@ this.props = {
 
 
 */
-export function Article ({ title, provider, description, thumbnail }) {
+export function Article ({ title, provider, description, thumbnail, link }) {
         return (
             <article id="article">
                 <img src={thumbnail} alt={title} />
@@ -17,6 +17,8 @@ export function Article ({ title, provider, description, thumbnail }) {
                     <h2>{title}</h2>
                     <h3>{provider}</h3>
                     <p>{description}</p>
+                    <p>Leia a notícia completa:</p>
+                    <p>{link}</p>
                 </div>
             </article>
         )

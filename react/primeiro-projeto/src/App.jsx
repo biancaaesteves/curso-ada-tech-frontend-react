@@ -1,11 +1,13 @@
-import React from "react";
-import './styles/App.css'
-import { Navbar } from "./components/Navbar/Navbar";
+import React, { useEffect, useState } from "react";
 import { Article } from "./components/Article/Article";
-import article1Img from "./assets/img/img01.jpg";
-import article2Img from "./assets/img/img02.jpg"
-import article3Img from "./assets/img/img03.jpeg";
-import { Counter } from "./components/Counter/Counter";
+import { Navbar } from "./components/Navbar/Navbar";
+import {InfinitySpin} from 'react-loader-spinner';
+import axios from 'axios';
+
+import './styles/App.css';
+
+// import { Counter } from "./components/Counter/Counter";
+
 
 
 // Um componente em classe é uma classe que herda a classe Component do React
@@ -13,50 +15,72 @@ import { Counter } from "./components/Counter/Counter";
 
 // Componente funcional é uma função que retorna HTML. 
 
-class App extends React.Component {  // função que retorna html. Tudo que está aqui, aparece no navegador. 
+function App() {  // função que retorna html. Tudo que está aqui, aparece no navegador. 
+  const [news, setNews] = useState([]);
+  /*
+  Objetivo desse estado: Assim que o componente montar, vou na API, vou puxar o array de notícias, trazer pra dentro dessa aplicação,
+  e jogar dentro do array que criei news. Com o estado, assim que é alterado, a aplicação atualiza, reenderiza.
+  */
 
- render() {  
-  // render é o método mais importante de um componente React. 
-  // Ele é responsável por renderizar o conteúdo HTML do nosso componente.
-  // Todo componente baseado em classes vai ter um método render.
+  useEffect(() => {
+    async function loadNews() {
+      const response = await axios.get('https://api.spaceflightnewsapi.net/v3/articles')
+      const newsData = response.data;
+      // Response.data pega os dados da requisição. 
+
+      console.log(newsData);
+      setNews(newsData) // estou pegando esse array de notícias e jogando diretamente no estado news. 
+    }
+    
+    loadNews();
+  }, [])
+  /*
+  Objetivo do useEffect: quero que a busca na API aconteça assim que o componente montar. 
+  Array inicia vazio pq assim que o componente montar, vou na API e buscar os dados utilizando o 
+  */
+ 
 
     return ( // e é dentro desse método que retornamos o html que será renderizado. 
        <> 
-        <Counter />
 
-    {/* <Navbar />
+    <Navbar />
+
 
     <section id="articles">
-      <Article
-      title="Designing Dashboards"
-      provider="NASA"
-      description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
-      thumbnail={article1Img}/> 
-
-      <Article 
-      title="Vibrant Portraits of 2020"
-      provider="SpaceNews"
-      description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
-      thumbnail={article2Img}/>
-
-      <Article title="36 Days of Malayalam type"
-      provider="Spaceflight Now"
-      description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
-      thumbnail={article3Img}/>
-
-      <Article
-      title="Designing Dashboards"
-      provider="NASA"
-      description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
-      thumbnail={article1Img}/> 
-
-    </section>  */}
+      {news.length === 0 ? (
+           <div style={{height: '400px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <InfinitySpin
+             height="80"
+              width="80"
+              radius="9"
+              color="green"
+              ariaLabel="loading"
+              wrapperStyle
+              wrapperClass
+      />
+           </div>
+      ) : news.map((article) => {
+        return (
+          <Article
+      key={article.id}
+      title={article.title}
+      provider={article.newsSite}
+      description={article.summary}
+      thumbnail={article.imageUrl}
+      link={article.url}
+      /> 
+        )
+      })}
+     {/* Se o tamanho do array de notícias for 0, significa que ele não carregou as notícias ainda, 
+     então mostra o loader. Do contrário (puxou as notícias), renderiza as notícias.
+      */}
+      
+    </section> 
      
      </>
      // Como não pode criar mais de 1 tag no render, o react criou essa tag vazia (fragment) para solucionar esse problema. 
    );
  }
-}
 
 
 export default App;  // está exportando a função App (componentes React)

@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 interface Task {
   title: string;
@@ -24,14 +24,29 @@ export const Tasks: React.FC = () => {
     } 
 
   // adiciona a tarefa
-    setTasks([
+    const newTasks = [
       ...tasks, // pega todas as tarefas que já existiam (no array antigo) e coloca nesse novo valor do estado de tarefas.
       {id: new Date().getTime(), title: taskTitle, done: false},
-    ]);
+    ];
+    setTasks(newTasks);
+    localStorage.setItem('tasks', JSON.stringify(newTasks));
+    // localStorage não guarda array e sim string. Por isso precisamos guardar o array em uma string. 
     setTaskTitle('')
     // vai no estado que guarda o título da tarefa e coloca uma string vazia dentro dela (limpo o input). 
-   
   }
+
+  useEffect(() => {
+    const tasksOnLocalStorage = localStorage.getItem('tasks')
+    if (tasksOnLocalStorage)  {  // se tiver tarefas no localStorage... 
+      setTasks(JSON.parse(tasksOnLocalStorage));
+    }
+
+  }, [])
+    /*
+    Assim que o componente for montado em tela, quero ir no localStorage,
+     pegar o array de tarefas e jogar dentro do estado testes
+    */
+
 
   return (
     <section className={styles.container}>
