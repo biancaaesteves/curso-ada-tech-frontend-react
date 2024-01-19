@@ -1,5 +1,5 @@
-import { FormEvent, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
+import { FormEvent, useEffect, useState } from "react";
 
 interface Task {
   title: string;
@@ -9,7 +9,7 @@ interface Task {
 
 export const Tasks: React.FC = () => {
   const [taskTitle, setTaskTitle] = useState('');
-  const [tasks, setTasks] = useState([] as Task[]);
+  const [tasks, setTasks] = useState([] as Task[])
  // estou criando um array como o array de tarefas, que é a interface.  
 
 
