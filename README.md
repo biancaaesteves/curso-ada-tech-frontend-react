@@ -23,9 +23,21 @@ Observação: como esse é um código de estudos, pode ser que tenha muitos come
 - React Funcional I - Componentes Funcionais e Estilização
 - Exercícios
 - React Funcional II - Hook de Estado
+- Exercícios
+- React Funcional III - Hook de efeito
+- Exercícios
+- React Funcional IV - Hook de referência
+- Exercícios
+- React Funcional V - Hooks de memoização
+- Exercícios
+- React Funcional VI - Hooks de contexto
+- Exercícios
 
 ### Módulo Styled Components
-- 
+- React + Styled Components I
+- Exercícios
+- React + Styled Components II
+
 
 ### Módulo Redux
 - 

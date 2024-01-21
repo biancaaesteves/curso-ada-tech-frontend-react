@@ -1,17 +1,12 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
+import { TasksContext } from "../../context/TasksContext";
 import styles from "./styles.module.scss";
 
-interface Task {
-  title: string;
-  done: boolean;
-  id: number;
-}
 
 export const Tasks: React.FC = () => {
   const [taskTitle, setTaskTitle] = useState('');
-  const [tasks, setTasks] = useState([] as Task[]);
- // estou criando um array como o array de tarefas, que é a interface.  
 
+  const {tasks, setTasks, handleToggleTaskStatus} = useContext(TasksContext);
 
   // função diaparada qdo o usuário está querendo adicionar uma nova tarefa
   function handleSubmitAddTask(event: FormEvent) {
@@ -34,19 +29,6 @@ export const Tasks: React.FC = () => {
     setTaskTitle('')
     // vai no estado que guarda o título da tarefa e coloca uma string vazia dentro dela (limpo o input). 
   }
-
-  useEffect(() => {
-    const tasksOnLocalStorage = localStorage.getItem('tasks')
-    if (tasksOnLocalStorage)  {  // se tiver tarefas no localStorage... 
-      setTasks(JSON.parse(tasksOnLocalStorage));
-    }
-
-  }, [])
-    /*
-    Assim que o componente for montado em tela, quero ir no localStorage,
-     pegar o array de tarefas e jogar dentro do estado testes
-    */
-
 
   return (
     <section className={styles.container}>
@@ -71,8 +53,17 @@ export const Tasks: React.FC = () => {
             <li key={task.id}>
               {/* toda vez que vc faz um map no react p/ renderizar múltiplos elementos através de um array, 
               no 1o elemento que vc está renderizando vc precisa passar uma key, um parâmetro que deve ser único p/ cada elemento que vc está renderizando.  */}
-          <input type="checkbox" id={`task-${task.id}`} />
-          <label htmlFor={`task-${task.id}`}>{task.title}</label>
+          <input type="checkbox" id={`task-${task.id}`}
+          onChange={() => handleToggleTaskStatus(task.id)}
+           // adiciona o estilo condicionalmente.
+          // se a tarefa estiver marcada como concluída, coloca o estilo riscado.
+          // do contrário, coloca uma string vazia (não coloca nenhuma classe)
+          />
+          {/* Arrow function pq preciso passar uma função que chama a função que eu quero, passando o id da tarefa. */}
+          <label 
+          className={task.done ? styles.done : ''}
+          htmlFor={`task-${task.id}`}>{task.title} 
+          </label>
         </li>
           )
           /*
@@ -84,4 +75,4 @@ export const Tasks: React.FC = () => {
       </ul>
     </section>
   )
-}
+      }
