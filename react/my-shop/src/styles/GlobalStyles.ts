@@ -1,8 +1,8 @@
-// CSS in TS 
+// CSS in TS
 
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
  * {
   margin: 0;
   padding: 0;
@@ -12,6 +12,12 @@ export const GlobalStyle = createGlobalStyle`
 
  body {
   background-color: #f7f7f7;
-  color: white;
  }
+
+body, button, input {
+  font-family: 'Poppins', sans-serif;
+}
 `;
+
+
+

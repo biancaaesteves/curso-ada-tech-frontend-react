@@ -1,15 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
-import { GlobalStyle } from './styles/GlobalStyles';
+import { GlobalStyles } from './styles/GlobalStyles';
+import { Header } from './components/Header/Header';
+import { ProductList } from './components/ProductsList/ProductsList';
 
-//* Componente Estilizado
 
 
 //* Componente Funcional
 function App() {
   return (
     <>
-    <GlobalStyle />
+    <GlobalStyles />
+    <Header />
+    <ProductList />
     
     </>
   );
