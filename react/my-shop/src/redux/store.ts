@@ -1,10 +1,41 @@
-import {createStore, applyMiddleware} from 'redux';
-import { rootReducer } from './root-reduce';
-import logger from 'redux-logger';
+
+import { rootReducer } from "./root-reducer";
+import logger from "redux-logger";
+import { configureStore } from "@reduxjs/toolkit";
+
+
+export const store = configureStore({
+reducer: rootReducer,
+// middleware: [logger],
+  
+});
 
 
 
-export const store = createStore(rootReducer, applyMiddleware(logger));
+// import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+// import { rootReducer } from "./root-reducer";
+// import logger from "redux-logger";
 
-// applyMiddleware intercepta tudo o que acontece no Redux, é um interceptador. 
+// export const store = configureStore({
+//   reducer: rootReducer,
+//   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+// });
 
+
+
+
+
+// todos os middlewares serãp adicionados em formato de array. 
+
+//* CÓDIGO DO PROFESSOR :
+
+// import { rootReducer } from "./root-reducer";
+// import logger from "redux-logger";
+// import { configureStore } from "@reduxjs/toolkit";
+
+
+// export const store = configureStore({
+//   reducer: rootReducer,
+//   middleware: [logger],
+  
+// });

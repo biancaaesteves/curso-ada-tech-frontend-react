@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const StyledHeader = styled.header`
   background-color: navy;
 `;
@@ -30,14 +31,14 @@ interface AuthButtonProps {
   isLogged: boolean;
 
 }
+
 export const AuthButton = styled.button<AuthButtonProps>`
-  border: none;
-  border-radius: 5px;
-  height: 30px;
-  padding: 0 1rem;
-  background-color: ${ (props) => props.isLogged ? 'red' : 'green'};
-  color: white;
-  font-size: 0.75rem;
+border: none;
+border-radius: 5px;
+height: 30px;
+padding: 0 1rem;
+background-color: ${(props) => props.isLogged ? 'red' : 'green'};
+color: white;
 
   // Centralizar ícone com o texto:
   display: flex;
@@ -48,7 +49,7 @@ export const AuthButton = styled.button<AuthButtonProps>`
   svg {
     font-size: 0.7;
   }
-`;
+`
 
 export const CartButton = styled.button`
   border: none;

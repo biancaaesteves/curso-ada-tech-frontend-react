@@ -82,4 +82,26 @@ export const AddToCartButton = styled.button`
   svg {
     font-size: 0.7;
   }
-`
+`;
+
+export const RemoveFromCartButton = styled.button`
+   border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 100%;
+  background-color: violet;
+  color: black;
+
+  margin-top: 1rem;
+
+  // Centralizar ícone com o texto:
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+
+  // Estilização do Ícone
+  svg {
+    font-size: 0.7;
+  }
+`;
