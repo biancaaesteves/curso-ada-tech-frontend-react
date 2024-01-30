@@ -38,12 +38,17 @@ Observação: como esse é um código de estudos, pode ser que tenha muitos come
 - Exercícios
 - React + Styled Components II
 
-
 ### Módulo Redux
-- 
+- Redux I
+- Exercícios 
+- Redux II
+- Redux III
 
 ### Módulo Testes e Deployment
--
+- Testes Unitários I
+- Exercícios
+- Testes Unitários II
+- Deploymend
 
 
 1. Faça um clone deste repositório em sua máquina local, caso deseje ter acesso aos materiais offline.

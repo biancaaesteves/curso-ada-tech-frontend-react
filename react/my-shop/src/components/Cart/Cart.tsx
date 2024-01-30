@@ -1,19 +1,17 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
+// estou importando de dentro dessa biblioteca, um objeto, cujo a propriedade que eu estou interessada é a propriedade useDispatch
+// essa biblioteca está retornando esse objeto com o useDispatch lá dentro. 
 import * as S from './styles';
-import { RootReducer } from '../../redux/root-reducer';
 import { removeProduct } from '../../redux/Cart/cart.slice';
+import { Product } from '../../data/products';
 
 interface CartProps {
   showCart: boolean;
+  cart: Product[]
 }
 
 export const Cart: React.FC<CartProps> = ({ 
-  showCart }) => {
-  // Pegar os dado do carrinho usando desestruturação do objeto:
-  const {cart} = useSelector(
-   (rootReducer: RootReducer) => rootReducer.cartReducer
-  );
-
+  showCart, cart }) => {
   const dispatch = useDispatch()
 
   const total = cart.reduce((totalCart, product) => {
@@ -41,7 +39,8 @@ export const Cart: React.FC<CartProps> = ({
 
       </S.CartProductList>
 
-      <S.CartTotal>Total: ${total}</S.CartTotal>
+      <S.CartTotal data-testid="total">Total: ${total}</S.CartTotal>
+      {/* data-  : permite pegar atributos.  */}
 
     </S.Container>
   );

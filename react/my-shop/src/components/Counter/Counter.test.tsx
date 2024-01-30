@@ -9,7 +9,7 @@ import userEvent from "@testing-library/user-event";
 describe('Counter > Unit Tests', () => {
   //* Teste 1: 
 it('should render Counter component correctly', () => {
-  render(<Counter/>)
+  render(<Counter/>);
 
   // a melhor coisa para pegar elementos do DOM é pelo getByRole.
   const counterValueElement = screen.getByRole('heading', {level: 1});  
